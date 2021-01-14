@@ -1,2 +1,30 @@
-@import "variables";
-@import "globals";
+@import "./globals";
+
+//navigation styles
+header {
+   box-shadow: rgba(153, 153, 153, 0.1) 0px 1px 30px;
+}
+
+nav {
+   @include flex;
+   min-height: 10vh;
+   width: 75%;
+   margin: 0 auto;
+
+   .nav-links {
+      @include flex;
+
+      a {
+         padding: 0.5rem;
+         margin: 0 0.5rem;
+         color: #AAA9AF;
+      }
+   }
+}
+
+.open-menu, .close-menu {
+   opacity: 0;
+   pointer-events: none;
+}
+
+//introduction section styles
