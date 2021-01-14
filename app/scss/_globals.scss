@@ -12,6 +12,7 @@ html {
 body {
    font-family: "Public Sans", sans-serif;
    line-height: 1.3;
+   overflow-x: hidden;
 }
 
 a {
@@ -57,4 +58,5 @@ ul {
 @mixin para_font {
    font-size: 1.2rem;
    color: #B9B9BB;
+   line-height: 2rem;
 }
