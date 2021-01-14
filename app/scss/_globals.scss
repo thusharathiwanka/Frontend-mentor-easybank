@@ -5,11 +5,11 @@ html {
 }
 *, *::before, *::after {
    box-sizing: inherit;
+   margin: 0;
+   padding: 0;
 }
 
 body {
-   margin: 0;
-   padding: 0;
    font-family: "Public Sans", sans-serif;
    line-height: 1.3;
 }
@@ -28,10 +28,33 @@ ul {
    color: white;
    border-radius: 30px;
    white-space: nowrap;
+   transition: opacity 0.3s ease;
+
+   &:hover {
+      opacity: 0.8;
+   }
 }
 
+//mixins
 @mixin flex {
    display: flex;
    justify-content: space-between;
    align-items: center;
+}
+
+@mixin body_margin {
+   width: 75%;
+   margin: 0 auto;
+}
+
+@mixin header_font {
+   font-size: 4.5rem;
+   font-weight: 300;
+   color: #32324C;
+   padding-bottom: 2rem;
+}
+
+@mixin para_font {
+   font-size: 1.2rem;
+   color: #B9B9BB;
 }
