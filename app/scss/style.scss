@@ -73,49 +73,117 @@ main {
       @include flex;
       background: #F4F5F7;
       min-height: 80vh;
-   }
 
-   .about {
-      @include body_margin;
+      .about {
+         @include body_margin;
+
+         h1 {
+            @include header_font;
+            font-size: 3rem;
+            padding-top: 5rem;
+         }
+
+         .sub-title {
+            @include para_font;
+            padding-bottom: 5rem;
+         }
+
+         .cards-content {
+            @include flex;
+
+            .cards {
+               width: 300px;
+               height: 300px;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-around;
+               align-items: flex-start;
+               flex-wrap: wrap;
+            }
+
+            p {
+               @include para_font;
+               font-size: 1rem;
+            }
+         }
+      }
+   }
+   .article-section {
+      @include flex;
+      background: #fafafa;
+      min-height: 90vh;
 
       h1 {
          @include header_font;
          font-size: 3rem;
-         padding-top: 5rem;
-      }
-
-      .sub-title {
-         @include para_font;
          padding-bottom: 5rem;
       }
-   }
 
-   .cards-content {
-      @include flex;
+      .articles {
+         @include body_margin;
+         
+         .article-content {
+            @include flex;
 
+            .article {
+               width: 300px;
+               height: 450px;
+               border-radius: 5px;
+               background: white;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+               cursor: pointer;
+               transition: box-shadow 0.3s ease;
 
-      .cards {
-         width: 300px;
-         height: 300px;
-         display: flex;
-         flex-direction: column;
-         justify-content: space-around;
-         align-items: flex-start;
-         flex-wrap: wrap;
-      }
+               &:hover {
+                  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px;
+               }
 
-      p {
-         @include para_font;
-         font-size: 1rem;
+               h3 {
+                  transition: color 0.3s ease;
+                  color: #32324C;
+
+                  &:hover {
+                     color: #33CF6A;
+                  }
+               }
+
+               p {
+                  color: #AAA9AF;
+               }
+
+               .author {
+                  color: #AAA9AF;
+                  font-size: .8rem;
+               }
+
+               img {
+                  border-top-left-radius: 5px;
+                  border-top-right-radius: 5px;
+                  object-fit: cover;
+                  height: 200px;
+               }
+
+               .text-content {
+                  @include flex;
+                  height: 100%;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  justify-content: space-evenly;
+                  padding: 1rem;
+               }
+            }
+         }
       }
    }
 }
 
 .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
+   font-size: 11px;
+   text-align: center;
+}
 
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
+.attribution a {
+   color: hsl(228, 45%, 44%);
+}

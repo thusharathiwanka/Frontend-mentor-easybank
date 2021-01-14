@@ -153,12 +153,12 @@ main .about-section {
   min-height: 80vh;
 }
 
-main .about {
+main .about-section .about {
   width: 75%;
   margin: 0 auto;
 }
 
-main .about h1 {
+main .about-section .about h1 {
   font-size: 4.5rem;
   font-weight: 300;
   color: #32324C;
@@ -167,14 +167,14 @@ main .about h1 {
   padding-top: 5rem;
 }
 
-main .about .sub-title {
+main .about-section .about .sub-title {
   font-size: 1.2rem;
   color: #B9B9BB;
   line-height: 2rem;
   padding-bottom: 5rem;
 }
 
-main .cards-content {
+main .about-section .about .cards-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,7 +186,7 @@ main .cards-content {
           align-items: center;
 }
 
-main .cards-content .cards {
+main .about-section .about .cards-content .cards {
   width: 300px;
   height: 300px;
   display: -webkit-box;
@@ -205,11 +205,129 @@ main .cards-content .cards {
       flex-wrap: wrap;
 }
 
-main .cards-content p {
+main .about-section .about .cards-content p {
   font-size: 1.2rem;
   color: #B9B9BB;
   line-height: 2rem;
   font-size: 1rem;
+}
+
+main .article-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fafafa;
+  min-height: 90vh;
+}
+
+main .article-section h1 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: #32324C;
+  padding-bottom: 2rem;
+  font-size: 3rem;
+  padding-bottom: 5rem;
+}
+
+main .article-section .articles {
+  width: 75%;
+  margin: 0 auto;
+}
+
+main .article-section .articles .article-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .article-section .articles .article-content .article {
+  width: 300px;
+  height: 450px;
+  border-radius: 5px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+main .article-section .articles .article-content .article:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px;
+          box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px;
+}
+
+main .article-section .articles .article-content .article h3 {
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  color: #32324C;
+}
+
+main .article-section .articles .article-content .article h3:hover {
+  color: #33CF6A;
+}
+
+main .article-section .articles .article-content .article p {
+  color: #AAA9AF;
+}
+
+main .article-section .articles .article-content .article .author {
+  color: #AAA9AF;
+  font-size: .8rem;
+}
+
+main .article-section .articles .article-content .article img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 200px;
+}
+
+main .article-section .articles .article-content .article .text-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1rem;
 }
 
 .attribution {
