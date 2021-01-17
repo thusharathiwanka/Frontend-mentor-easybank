@@ -20,10 +20,11 @@ nav {
          padding: 2.2rem 0.5rem;
          margin: 0 0.5rem;
          color: #AAA9AF;
-         transition: border-bottom 0.2s ease;
+         transition: all 0.3s ease;
 
          &:hover {
             border-bottom: 4px solid #33CF6A;
+            color: #8a8a8a;
          }
       }
    }
@@ -33,8 +34,8 @@ nav {
    display: none;
 }
 
-//introduction section styles
 main {
+   //introduction section styles
    .intro-section {
       background: url("../../images/bg-intro-desktop.svg");
       background-repeat: no-repeat;
@@ -69,6 +70,7 @@ main {
       }
    }
 
+   //about styles
    .about-section {
       @include flex;
       background: #F4F5F7;
@@ -90,6 +92,7 @@ main {
 
          .cards-content {
             @include flex;
+            flex-wrap: wrap;
 
             .cards {
                width: 300px;
@@ -108,6 +111,8 @@ main {
          }
       }
    }
+
+   //article styles
    .article-section {
       @include flex;
       background: #fafafa;
@@ -124,6 +129,7 @@ main {
          
          .article-content {
             @include flex;
+             flex-wrap: wrap;
 
             .article {
                width: 300px;
@@ -179,6 +185,7 @@ main {
    }
 }
 
+//footer styles
 footer {
    background: #32324C;
    min-height: 25vh;
@@ -247,4 +254,52 @@ footer {
 .attribution {
    font-size: 11px;
    text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+   main .intro-section .mockups {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   nav {
+      width: 90%;
+   }
+
+   header {
+      position: relative;
+   }
+   
+   nav .cta, nav .nav-links {
+      position: fixed;
+      width: 80%;
+      height: 40%;
+      top: 15vh;
+      left: 10vw;
+      align-self: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background: rgb(255, 255, 255);
+      border-radius: 10px;
+      transform: translateY(-130%);
+      transition: transform 0.5s ease;
+      color: #32324C;
+      display: none;
+   }
+
+   nav .nav-open {
+      transform: translateY(0%);
+      display: flex;
+   }
+
+   .open-menu, .close-menu {
+      position: absolute;
+      top: 40%;
+      right: 5%;
+   }
+
+   .open-menu {
+      display: block;
+   }
 }

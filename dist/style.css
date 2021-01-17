@@ -79,12 +79,13 @@ nav .nav-links a {
   padding: 2.2rem 0.5rem;
   margin: 0 0.5rem;
   color: #AAA9AF;
-  -webkit-transition: border-bottom 0.2s ease;
-  transition: border-bottom 0.2s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 nav .nav-links a:hover {
   border-bottom: 4px solid #33CF6A;
+  color: #8a8a8a;
 }
 
 .open-menu, .close-menu {
@@ -184,6 +185,8 @@ main .about-section .about .cards-content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .about-section .about .cards-content .cards {
@@ -250,6 +253,8 @@ main .article-section .articles .article-content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .article-section .articles .article-content .article {
@@ -434,5 +439,62 @@ footer .footer-content .footer-cta p {
 .attribution {
   font-size: 11px;
   text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+  main .intro-section .mockups {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 90%;
+  }
+  header {
+    position: relative;
+  }
+  nav .cta, nav .nav-links {
+    position: fixed;
+    width: 80%;
+    height: 40%;
+    top: 15vh;
+    left: 10vw;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    background: white;
+    border-radius: 10px;
+    -webkit-transform: translateY(-130%);
+            transform: translateY(-130%);
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    color: #32324C;
+    display: none;
+  }
+  nav .nav-open {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .open-menu, .close-menu {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+  }
+  .open-menu {
+    display: block;
+  }
 }
 /*# sourceMappingURL=style.css.map */
