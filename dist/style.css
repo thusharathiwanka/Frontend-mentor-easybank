@@ -19,6 +19,7 @@ body {
 
 a {
   text-decoration: none;
+  white-space: nowrap;
 }
 
 ul {
@@ -95,10 +96,10 @@ nav .nav-links a:hover {
 main .intro-section {
   background: url("../../images/bg-intro-desktop.svg");
   background-repeat: no-repeat;
-  background-position-x: 55rem;
-  background-position-y: -16rem;
-  min-height: 90vh;
-  overflow: hidden;
+  background-position-x: 140%;
+  background-position-y: 80%;
+  min-height: 80vh;
+  overflow-x: hidden;
 }
 
 main .intro-section .intro {
@@ -152,6 +153,7 @@ main .about-section {
           align-items: center;
   background: #F4F5F7;
   min-height: 80vh;
+  padding: 4rem 0;
 }
 
 main .about-section .about {
@@ -165,7 +167,6 @@ main .about-section .about h1 {
   color: #32324C;
   padding-bottom: 2rem;
   font-size: 3rem;
-  padding-top: 5rem;
 }
 
 main .about-section .about .sub-title {
@@ -206,6 +207,7 @@ main .about-section .about .cards-content .cards {
           align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 1.2rem;
 }
 
 main .about-section .about .cards-content p {
@@ -241,6 +243,7 @@ main .article-section h1 {
 main .article-section .articles {
   width: 75%;
   margin: 0 auto;
+  padding: 4rem 0;
 }
 
 main .article-section .articles .article-content {
@@ -277,6 +280,7 @@ main .article-section .articles .article-content .article {
   transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  margin: 1.2rem;
 }
 
 main .article-section .articles .article-content .article:hover {
@@ -350,6 +354,7 @@ footer {
 }
 
 footer .footer-content {
+  padding: 2rem 0;
   width: 75%;
   margin: 0 auto;
   display: -webkit-box;
@@ -361,6 +366,8 @@ footer .footer-content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 footer .footer-content a {
@@ -369,6 +376,10 @@ footer .footer-content a {
 
 footer .footer-content footer-logo {
   fill: white;
+}
+
+footer .footer-content .social {
+  margin: 2rem 4rem;
 }
 
 footer .footer-content .social .footer-logo {
@@ -388,7 +399,19 @@ footer .footer-content .social a:hover svg path {
   fill: #33CF6A;
 }
 
-footer .footer-content ul {
+footer .footer-content .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer-content .links ul {
   height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -399,13 +422,14 @@ footer .footer-content ul {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin: 4rem;
 }
 
-footer .footer-content ul a {
+footer .footer-content .links ul a {
   display: inline-block;
 }
 
-footer .footer-content ul a:not(:last-child) {
+footer .footer-content .links ul a:not(:last-child) {
   padding-bottom: 1rem;
 }
 
@@ -429,7 +453,7 @@ footer .footer-content .footer-cta {
 }
 
 footer .footer-content .footer-cta .cta {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 footer .footer-content .footer-cta p {
@@ -454,7 +478,11 @@ footer .footer-content .footer-cta p {
   header {
     position: relative;
   }
-  nav .cta, nav .nav-links {
+  nav .cta,
+  nav .nav-links {
+    display: none;
+  }
+  nav .nav-links {
     position: fixed;
     width: 80%;
     height: 40%;
@@ -479,7 +507,6 @@ footer .footer-content .footer-cta p {
     transition: transform 0.5s ease;
     transition: transform 0.5s ease, -webkit-transform 0.5s ease;
     color: #32324C;
-    display: none;
   }
   nav .nav-open {
     -webkit-transform: translateY(0%);
@@ -495,6 +522,55 @@ footer .footer-content .footer-cta p {
   }
   .open-menu {
     display: block;
+  }
+  main h1 {
+    text-align: center;
+  }
+  main .about-section .about {
+    text-align: center;
+  }
+  main .about-section .about .cards-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .about-section .about .cards-content .cards {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .article-section .articles .article-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1419px) {
+  footer .footer-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footer-content .footer-cta {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer .footer-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footer-content .social {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

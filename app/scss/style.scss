@@ -39,16 +39,16 @@ main {
    .intro-section {
       background: url("../../images/bg-intro-desktop.svg");
       background-repeat: no-repeat;
-      background-position-x: 55rem;
-      background-position-y: -16rem;
-      min-height: 90vh;
-      overflow: hidden;
+      background-position-x: 140%;
+      background-position-y: 80%;
+      min-height: 80vh;
+      overflow-x: hidden;
 
       .intro {
          @include body_margin;
          @include flex;
          padding-top: 12rem;
-
+   
          h1 {
             @include header_font;
          }
@@ -75,6 +75,7 @@ main {
       @include flex;
       background: #F4F5F7;
       min-height: 80vh;
+      padding: 4rem 0;
 
       .about {
          @include body_margin;
@@ -82,7 +83,6 @@ main {
          h1 {
             @include header_font;
             font-size: 3rem;
-            padding-top: 5rem;
          }
 
          .sub-title {
@@ -102,6 +102,7 @@ main {
                justify-content: space-around;
                align-items: flex-start;
                flex-wrap: wrap;
+               margin: 1.2rem;
             }
 
             p {
@@ -126,6 +127,7 @@ main {
 
       .articles {
          @include body_margin;
+         padding: 4rem 0;
          
          .article-content {
             @include flex;
@@ -141,6 +143,7 @@ main {
                justify-content: space-between;
                cursor: pointer;
                transition: box-shadow 0.3s ease;
+               margin: 1.2rem;
 
                &:hover {
                   box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px;
@@ -192,8 +195,10 @@ footer {
    @include flex;
 
    .footer-content {
+      padding: 2rem 0;
       @include body_margin;
       @include flex;
+      flex-wrap: wrap;
       
       a {
          color: white;
@@ -204,6 +209,7 @@ footer {
       }
 
       .social {
+         margin: 2rem 4rem;
          .footer-logo {
             padding-bottom: 3rem;
          }
@@ -220,20 +226,26 @@ footer {
             }
          }
       }
-      ul{
-         height: 15vh;
-         display: flex;
-         flex-direction: column;
-         justify-content: space-around;
 
-         a {
-            display: inline-block;
-         }
+      .links {
+         @include flex;
 
-         a:not(:last-child) {
-            padding-bottom: 1rem;
+         ul {
+            height: 15vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin: 4rem;
+
+            a {
+               display: inline-block;
+            }
+
+            a:not(:last-child) {
+               padding-bottom: 1rem;
+            }
          }
-      } 
+      }
 
       .footer-cta {
          @include flex;
@@ -241,7 +253,7 @@ footer {
          align-items: flex-end;
 
          .cta {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
          }
 
          p {
@@ -271,7 +283,12 @@ footer {
       position: relative;
    }
    
-   nav .cta, nav .nav-links {
+   nav .cta,
+   nav .nav-links {
+      display: none;
+   }
+
+   nav .nav-links {
       position: fixed;
       width: 80%;
       height: 40%;
@@ -285,7 +302,6 @@ footer {
       transform: translateY(-130%);
       transition: transform 0.5s ease;
       color: #32324C;
-      display: none;
    }
 
    nav .nav-open {
@@ -301,5 +317,59 @@ footer {
 
    .open-menu {
       display: block;
+   }
+
+   main {
+      h1 {
+         text-align: center;
+      }
+      
+      .about-section {
+         .about {
+            text-align: center;
+
+            .cards-content {
+               justify-content: center;
+
+               .cards {
+                  align-items: center;
+               }
+            }
+         }
+      }
+
+      .article-section {
+         .articles {
+            .article-content {
+               justify-content: center;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 1419px) {
+   footer {
+      .footer-content {
+         justify-content: center;
+
+         .footer-cta {
+            align-items: center;
+            align-self: center;
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 450px) {
+   footer {
+      .footer-content {
+         justify-content: center;
+
+         .social {
+            margin-left: 0;
+            margin-right: 0;
+         }
+      }
    }
 }
