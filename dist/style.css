@@ -2,6 +2,7 @@ html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {
@@ -14,7 +15,6 @@ html {
 body {
   font-family: "Public Sans", sans-serif;
   line-height: 1.3;
-  overflow-x: hidden;
 }
 
 a {
@@ -90,7 +90,8 @@ nav .nav-links a:hover {
 }
 
 .open-menu, .close-menu {
-  display: none;
+  visibility: hidden;
+  position: absolute;
 }
 
 main .intro-section {
@@ -111,13 +112,6 @@ main .intro-section .intro {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 12rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-main .intro-section .intro .intro-content {
-  -ms-flex-preferred-size: 50rem;
-      flex-basis: 50rem;
 }
 
 main .intro-section .intro h1 {
@@ -136,15 +130,8 @@ main .intro-section .intro p {
 
 main .intro-section .intro .mockups, main .intro-section .intro .background-img {
   position: absolute;
-  top: -5%;
+  top: -0%;
   right: -6%;
-}
-
-main .intro-section .intro .intro-img {
-  -ms-flex-preferred-size: 30rem;
-      flex-basis: 30rem;
-  width: 100%;
-  height: 100%;
 }
 
 main .intro-section .intro .mockups {
@@ -556,10 +543,8 @@ footer .footer-content .footer-cta p {
     border-radius: 10px;
     -webkit-transform: translateY(-130%);
             transform: translateY(-130%);
-    -webkit-transition: -webkit-transform 0.5s ease;
-    transition: -webkit-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     color: #32324C;
   }
   nav .nav-open {
@@ -575,7 +560,7 @@ footer .footer-content .footer-cta p {
     right: 5%;
   }
   .open-menu {
-    display: block;
+    visibility: visible;
   }
   main h1 {
     text-align: center;
