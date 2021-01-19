@@ -94,10 +94,6 @@ nav .nav-links a:hover {
 }
 
 main .intro-section {
-  background: url("../../images/bg-intro-desktop.svg");
-  background-repeat: no-repeat;
-  background-position-x: 140%;
-  background-position-y: 80%;
   min-height: 80vh;
   overflow-x: hidden;
 }
@@ -115,6 +111,13 @@ main .intro-section .intro {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 12rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .intro-section .intro .intro-content {
+  -ms-flex-preferred-size: 50rem;
+      flex-basis: 50rem;
 }
 
 main .intro-section .intro h1 {
@@ -131,14 +134,30 @@ main .intro-section .intro p {
   padding-bottom: 3rem;
 }
 
-main .intro-section .intro-img {
+main .intro-section .intro .mockups, main .intro-section .intro .background-img {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -5%;
+  right: -6%;
 }
 
-main .intro-section .mockups {
-  width: 120%;
+main .intro-section .intro .intro-img {
+  -ms-flex-preferred-size: 30rem;
+      flex-basis: 30rem;
+  width: 100%;
+  height: 100%;
+}
+
+main .intro-section .intro .mockups {
+  width: 48%;
+  height: auto;
+}
+
+main .intro-section .intro .background-img {
+  width: 70%;
+  top: -16%;
+  right: -16%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main .about-section {
@@ -471,6 +490,41 @@ footer .footer-content .footer-cta p {
   }
 }
 
+@media screen and (max-width: 1419px) {
+  main .intro-section .intro .mockups,
+  main .intro-section .intro .background-img {
+    right: -10%;
+  }
+  main .intro-section .intro .mockups {
+    width: 48%;
+    height: auto;
+  }
+  main .intro-section .intro .background-img {
+    width: 70%;
+    top: -30%;
+    right: -16%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main .intro-section .intro .background-mobile {
+    opacity: 0;
+    pointer-events: none;
+  }
+  footer .footer-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footer-content .footer-cta {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   nav {
     width: 90%;
@@ -526,6 +580,29 @@ footer .footer-content .footer-cta p {
   main h1 {
     text-align: center;
   }
+  main .intro-section {
+    max-width: 1200px;
+  }
+  main .intro-section .intro {
+    text-align: center;
+  }
+  main .intro-section .intro h1 {
+    padding-top: 30rem;
+  }
+  main .intro-section .intro .mockups, main .intro-section .intro .background-img {
+    top: -5%;
+    right: 20%;
+  }
+  main .intro-section .intro .background-img {
+    width: 100%;
+    right: 5%;
+  }
+  main .intro-section .intro .mockups {
+    width: 60%;
+  }
+  main .intro-section .intro .intro-img {
+    padding-bottom: 10rem;
+  }
   main .about-section .about {
     text-align: center;
   }
@@ -546,19 +623,21 @@ footer .footer-content .footer-cta p {
   }
 }
 
-@media screen and (max-width: 1419px) {
-  footer .footer-content {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+@media screen and (max-width: 800px) {
+  main .intro-section .intro h1 {
+    padding-top: 20rem;
   }
-  footer .footer-content .footer-cta {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+}
+
+@media screen and (max-width: 600px) {
+  main .intro-section .intro h1 {
+    padding-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main .intro-section .intro h1 {
+    font-size: 3rem;
   }
 }
 
@@ -571,6 +650,9 @@ footer .footer-content .footer-cta p {
   footer .footer-content .social {
     margin-left: 0;
     margin-right: 0;
+  }
+  footer .footer-content .links ul {
+    margin: 1rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
