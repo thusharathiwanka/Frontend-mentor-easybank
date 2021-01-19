@@ -70,5 +70,5 @@ This challenge is completely free. Please share it with anyone who will find it 
 
 **Have fun building!** 🚀
 
-## Live Site URL
+## Live Site URL 🎉
 https://easybank-sage.vercel.app/
